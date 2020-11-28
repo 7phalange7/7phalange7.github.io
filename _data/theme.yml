@@ -35,4 +35,5 @@ google_fonts:
 
 navigation_pages:
   - nav_pages/archive.md
+  - nav_pages/tags.md
   - nav_pages/about.md
