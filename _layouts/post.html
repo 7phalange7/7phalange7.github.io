@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% include page-intro.html %}
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        {{ content }}
+      </div>
+      {% if page.tags %}
+
+      <div class="tags">
+        <hr style="width:100%;text-align:left;margin-left:0">
+        <h3>Tags</h3>
+        <ul class="taxonomy-index">
+          {% for tag in page.tags %}
+          <a href="/example/tags/#{{tag}}/">
+            <strong>{{ tag }}</strong>
+          </a>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% endif %}
+      {% if site.disqus.shortname %}
+      {% include disqus_comments.html %}
+      {% endif %}
+    </article>
+  </div>
+</main>
