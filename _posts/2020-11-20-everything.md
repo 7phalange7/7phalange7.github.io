@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Basic Syntax | Markdown Guide"
+title:  "Basic  | Markdown Guide"
 date:   2020-11-19 00:30:53 +0530
-cataegory: writeup
+category: writeup
 tags:
   - markdown
   - testing

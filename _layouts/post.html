@@ -10,23 +10,23 @@ layout: default
       <div class="entry-content">
         {{ content }}
       </div>
-      {% if page.tags %}
 
+      {% if page.tags %}
       <div class="tags">
         <h1></h1>
         <hr style="width:100%;text-align:left;margin-left:0">
         <hr style="width:100%;text-align:left;margin-left:0">
-        <h3>Tags</h3>
-        <ul class="taxonomy-index">
+        <p><img src="/assets/images/site/tags.png" alt="Tags" width="20px">
+        <ul class="taxonomy-indexutk">
           {% for tag in page.tags %}
           <a href="/tags/#{{tag}}">
             <strong>{{ tag }}</strong>
           </a>
           {% endfor %}
-        </ul>
+        </ul></p>
       </div>
-
       {% endif %}
+
       {% if site.disqus.shortname %}
       {% include disqus_comments.html %}
       {% endif %}
