@@ -30,11 +30,12 @@
       </p>
       {% endif %}
 
-      {% if page.category %}
-      <p class="taxonomy-indexutk3"><img src="/assets/images/site/category.png" alt="Category" width="20px"> <a href="/categories/#{{page.category | slugify}}">
-          <strong>{{page.category}}</strong>
-        </a>
-      </p>
+      {% if page.categories %}
+        <p class="taxonomy-indexutk3"><img src="/assets/images/site/category.png" alt="Category" width="20px">
+          {% for cat in page.categories %} <a href="/categories/#{{page.category | slugify}}">
+            <strong>{{cat}}</strong>
+          </a> {% endfor %}
+        </p>
       {% endif %}
 
 

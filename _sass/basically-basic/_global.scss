@@ -6,9 +6,7 @@
   @include fluid-type($min-vw, $max-vw, 20px, 24px);
   margin: 0;
   padding: 1.8125rem 1rem;
-  padding-right: calc(
-    10vw + (2 * #{$navicon-width})
-  ); /* make room for sidebar toggle */
+  padding-right: calc(10vw + (2 * #{$navicon-width})); /* make room for sidebar toggle */
   font-family: $base-font-family;
   font-weight: bold;
   line-height: 1;
@@ -170,7 +168,7 @@
     padding: 5px 5px;
     text-align: center;
     border-radius: 0.5em;
-    
+
     display: inline-block;
     text-decoration: none;
 
@@ -199,18 +197,16 @@
   }
 
   a {
-   
     color: white;
     padding: 5px 5px;
     text-align: center;
     border-radius: 0.5em;
-    
+
     display: inline-block;
     text-decoration: none;
 
     &:hover {
       color: $accent-color;
-      
     }
   }
 
@@ -218,3 +214,12 @@
     margin-top: 3em;
   }
 }
+
+// .commalist {
+//   display: inline;
+//   list-style: none;
+
+//   li:not(:last-child):after {
+//     content: ", ";
+//   }
+// }
