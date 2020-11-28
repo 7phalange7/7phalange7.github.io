@@ -31,7 +31,7 @@
       {% endif %}
 
       {% if page.category %}
-      <p class="taxonomy-indexutk"><img src="/assets/images/site/tags.png" alt="Tags" width="20px"> <a href="/categories/#{{page.category}}">
+      <p class="taxonomy-indexutk3"><img src="/assets/images/site/category.png" alt="Category" width="20px"> <a href="/categories/#{{page.category | slugify}}">
           <strong>{{page.category}}</strong>
         </a>
       </p>
