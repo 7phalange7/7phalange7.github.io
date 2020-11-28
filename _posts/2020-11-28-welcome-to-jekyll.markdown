@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2020-11-28 12:56:52 +0530
-categories: jekyll update
+categories: tutorial
 tags:
   - privsec
   - security
