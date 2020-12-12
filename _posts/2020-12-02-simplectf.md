@@ -4,6 +4,7 @@ title:  "Simple CTF - TryHackMe"
 date:   2020-12-02 00:30:53 +0  530
 categories: [writeup, tryhackme]
 category: writeup
+image: assets/images/covers/simplectf.jpg
 tags:
   - ctf
   - privesc
