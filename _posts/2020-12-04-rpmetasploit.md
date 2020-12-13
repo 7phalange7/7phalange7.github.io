@@ -22,7 +22,7 @@ Intialize and start metasploit `sudo msfdb init && msfconsole` or just `msfconso
 
     `-q`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled.png)
+![/assets/images/posts/rpmetasploit/Untitled.png](/assets/images/posts/rpmetasploit/Untitled.png)
 
 - Cool! We've connected to the database, which type of database does Metasploit 5 use?
 
@@ -116,23 +116,23 @@ let us scan the target with built-in `nmap` in `metasploit`
 
 `db_nmap -sV <ip>`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%201.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%201.png)
+![/assets/images/posts/rpmetasploit/Untitled%201.png](/assets/images/posts/rpmetasploit/Untitled%201.png)
 
 - What service does nmap identify running on port 135?
 
     `msrpc`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%202.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%202.png)
+![/assets/images/posts/rpmetasploit/Untitled%202.png](/assets/images/posts/rpmetasploit/Untitled%202.png)
 
 - Now that we've scanned our victim system, let's try connecting to it with a Metasploit payload. First, we'll have to search for the target payload. In Metasploit 5 (the most recent version at the time of writing) you can simply type 'use' followed by a unique string found within only the target exploit. For example, try this out now with the following command 'use icecast'. What is the full path for our exploit that now appears on the msfconsole prompt? *This will include the exploit section at the start
 
     `exploit/windows/http/icecast_header`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%203.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%203.png)
+![/assets/images/posts/rpmetasploit/Untitled%203.png](/assets/images/posts/rpmetasploit/Untitled%203.png)
 
 We can use our search results without typing out the full name/path of the module we want to use as shown below
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%204.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%204.png)
+![/assets/images/posts/rpmetasploit/Untitled%204.png](/assets/images/posts/rpmetasploit/Untitled%204.png)
 
 - What is the name of the column on the far left side of the console that shows up next to 'Name'?
 
@@ -146,27 +146,27 @@ ser the target ip `set RHOSTS <ip>`
 
 select the previous exploit again `use icecast`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%205.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%205.png)
+![/assets/images/posts/rpmetasploit/Untitled%205.png](/assets/images/posts/rpmetasploit/Untitled%205.png)
 
 You can view the variable values using `options` command
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%206.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%206.png)
+![/assets/images/posts/rpmetasploit/Untitled%206.png](/assets/images/posts/rpmetasploit/Untitled%206.png)
 
 You can list all sessions using `sessions`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%207.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%207.png)
+![/assets/images/posts/rpmetasploit/Untitled%207.png](/assets/images/posts/rpmetasploit/Untitled%207.png)
 
 Now, run the exploit using the command `exploit`
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%208.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%208.png)
+![/assets/images/posts/rpmetasploit/Untitled%208.png](/assets/images/posts/rpmetasploit/Untitled%208.png)
 
 # Task 6 : We're in, now what?
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%209.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%209.png)
+![/assets/images/posts/rpmetasploit/Untitled%209.png](/assets/images/posts/rpmetasploit/Untitled%209.png)
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2010.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2010.png)
+![/assets/images/posts/rpmetasploit/Untitled%2010.png](/assets/images/posts/rpmetasploit/Untitled%2010.png)
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2011.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2011.png)
+![/assets/images/posts/rpmetasploit/Untitled%2011.png](/assets/images/posts/rpmetasploit/Untitled%2011.png)
 
 - First things first, our initial shell/process typically isn't very stable. Let's go ahead and attempt to move to a different process. First, let's list the processes using the command 'ps'. What's the name of the spool service?
 
@@ -206,11 +206,11 @@ Now, run the exploit using the command `exploit`
 
 - Let's go ahead and run a few post modules from Metasploit. First, let's run the command `run post/windows/gather/checkvm`. This will determine if we're in a VM, a very useful piece of knowledge for further pivoting.
 
-![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2012.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2012.png)
+![/assets/images/posts/rpmetasploit/Untitled%2012.png](/assets/images/posts/rpmetasploit/Untitled%2012.png)
 
 - Next, let's try: `run post/multi/recon/local_exploit_suggester`. This will check for various exploits which we can run within our session to elevate our privileges. Feel free to experiment using these suggestions, however, we'll be going through this in greater detail in the room `Ice`
 
-    ![Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2013.png](Metasploit%20-%20TryHackMe%200ffcc85fa5b64b8c9fce5c4e45a15c58/Untitled%2013.png)
+    ![/assets/images/posts/rpmetasploit/Untitled%2013.png](/assets/images/posts/rpmetasploit/Untitled%2013.png)
 
 - Finally, let's try forcing RDP to be available. This won't work since we aren't administrators, however, this is a fun command to know about: `run post/windows/manage/enable_rdp`
 - One quick extra question, what command can we run in our meterpreter session to spawn a normal system shell?
