@@ -661,7 +661,7 @@ int main()
 }
 ```
 
-![Untitled](/assets/images/posts/input//Untitled.png)
+![Untitled](https://tenor.com/TEZM.gif)
 
 **References:**
 

@@ -11,6 +11,13 @@ tags:
   - ctf
   - privesc
   - cms
+mode: immersive
+header:
+  theme: dark
+article_header:
+  type: cover
+  image:
+    src: assets/images/covers/simplectf.jpg
 ---
 
 [Room Link](https://tryhackme.com/room/easyctf)
