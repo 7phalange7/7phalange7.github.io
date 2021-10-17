@@ -661,7 +661,7 @@ int main()
 }
 ```
 
-![Untitled](https://tenor.com/TEZM.gif)
+![Untitled](https://c.tenor.com/93OUVuCIk6MAAAAC/done-and-done-spongebob.gif)
 
 **References:**
 
