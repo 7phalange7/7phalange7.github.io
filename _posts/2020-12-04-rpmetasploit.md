@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: article
 title:  "Metasploit -  TryHackMe"
 date:   2020-12-04 01:30:53 +0  530
-categories: [writeup, tryhackme]
-category: writeup
+# categories: [writeup, tryhackme]
+# category: writeup
 tags:
+  - writeup
+  - tryhackme
   - metasploit
   - pentesting
   - windows

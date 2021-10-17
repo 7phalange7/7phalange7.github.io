@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: article
 title:  "Linux PrivEsc - TryHackMe"
 date:   2020-11-30 00:30:53 +0  530
-categories: [writeup, tryhackme]
-category: writeup
+# categories: [writeup, tryhackme]
+# category: writeup
 tags:
+  - writeup
+  - tryhackme
   - pentesting
   - privesc
 ---

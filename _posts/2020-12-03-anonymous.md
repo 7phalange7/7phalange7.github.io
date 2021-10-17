@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: article
 title:  "Anonymous - TryHackMe"
 date:   2020-12-03 00:30:53 +0  530
-categories: [writeup, tryhackme]
-category: writeup
+# categories: [writeup, tryhackme]
+# category: writeup
 tags:
+  - writeup
+  - tryhackme
   - ctf
   - privesc
   - ftp
