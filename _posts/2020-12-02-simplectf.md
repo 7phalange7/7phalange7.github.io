@@ -1,11 +1,13 @@
 ---
-layout: post
+layout: article
 title:  "Simple CTF - TryHackMe"
 date:   2020-12-02 00:30:53 +0  530
-categories: [writeup, tryhackme]
-category: writeup
-image: assets/images/covers/simplectf.jpg
+# categories: [writeup, tryhackme]
+# category: writeup
+cover: assets/images/covers/simplectf.jpg
 tags:
+  - writeup
+  - tryhackme
   - ctf
   - privesc
   - cms

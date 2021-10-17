@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: article
 title:  "Hydra - TryHackMe"
 date:   2020-11-27 00:30:53 +0  530
-categories: [writeup, tryhackme]
-category: writeup
+# categories: [writeup, tryhackme]
+# category: writeup
 tags:
+  - writeup
+  - tryhackme
   - bruteforce
   - hydra
   - password-cracking

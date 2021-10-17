@@ -1,0 +1,84 @@
+///
+// Skin: Default - modiefied by 7phalange7
+// Author: Tian Qi
+// Email: kitian616@outlook.com
+///
+
+//custom colors
+$code-color:        #56fa50;
+$header-link-color: #F9F9F3;
+$header-item-active:#8731ff;
+$archive-tag:       #bd93f9;
+$archive-tag-main:  #6272a4;
+
+
+
+// main colors
+$main-color-1:     #FF6E67;
+$text-color-1:     #f8f8f2;
+
+$main-color-2:     #ffb86c;
+$text-color-2:     #6272a4;
+
+$main-color-3:     #bd93f9;
+$text-color-3:     #282A36;
+
+$main-color-theme-light: rgba(#000, .9);
+$main-color-theme-dark:  rgba(#fff, .9);
+
+// page background
+$background-color: #282a36;
+
+// text colors
+$text-color-theme-light-d: #f8f8f2; //heading
+$text-color-theme-light:   #f8f8f2; // general text
+$text-color-theme-light-l: #BFBFBF;   // deatils like date and quote colour
+
+$text-color-theme-dark-d:  #fff;
+$text-color-theme-dark:    rgba(#fff, .95);
+$text-color-theme-dark-l:  rgba(#fff, .85);
+
+$text-color-d:     $text-color-theme-light-d;
+$text-color:       $text-color-theme-light;
+$text-color-l:     $text-color-theme-light-l;
+
+$text-background-color: #4a567a;
+
+// header and footer colors
+$header-text-color: $text-color-3;
+// $header-background: $main-color-3;
+$header-background: linear-gradient(60deg, $main-color-3 0%, #aa72fa 100%); //gradient header
+
+$footer-text-color: $text-color-1;
+$footer-background: $background-color;
+
+// border and shadow colors
+$border-color:     #4a567a; // quote bar colour
+$border-color-l:   #4a567a; // horizontal line
+$decorate-color:   #2bff00; // change this, idk what does this affect
+$mask-color:       rgba(#000, .9);
+$select-color:     rgba($main-color-1, .8);
+
+// function colors
+$green:           #52c41a;
+$blue:            #1890ff;
+$yellow:          #fa8c16;
+$red:             #f5222d;
+$text-color-function: #fff;
+
+// logo colors
+$mail-color:       #0072c5;
+$facebook-color:   #4267b2;
+$twitter-color:    #1da1f2;
+$weibo-color:      #e6162d;
+$google-plus-color:#ea4335;
+$telegram-color:   #32afed;
+$medium-color:     #000;
+$zhihu-color:      #0084ff;
+$douban-color:     #42bd56;
+$linkedin-color:   #1074af;
+$github-color:     #000;
+$npm-color:        #fff;
+
+// highlight colors
+@import "skins/highlight/tomorrow";

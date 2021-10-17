@@ -1,0 +1,12 @@
+header:
+  - title: Blog
+    url:   /blog/
+
+  - title: Archive
+    url:   /blog/archive.html
+
+  - title: Projects 
+    url:   /blog/projects.html
+
+  - title: About
+    url:   /blog/about.html
